@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+message ExampleMessage {
+    int64 hello_id = 1 [(validator.field) = {int_gt: 0}];
+}
+
+message Empty {}
+
+service ExampleAPI {
+    rpc Hello(ExampleMessage) returns (Empty);
+}
