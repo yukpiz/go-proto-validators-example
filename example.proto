@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "github.com/mwitkow/go-proto-validators/validator.proto";
+option go_package = "pb";
 
 message ExampleMessage {
     int64 hello_id = 1 [(validator.field) = {int_gt: 0}];
